@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <!--box icons-->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+
+<body class="body">
+    <!--Navbar start-->
+
+    <nav class="navbar">
+        <h2 class="navbar__title">Landing Page</h2>
+        <div class="navbar__account-container">
+            <h3 class="navbar__account-text">SEGUÍ CONECTADO</h3>
+            <div class=navbar__account-logo>
+                <span class="navbar__account-logo-content">f</span>
+            </div>
+        </div>
+    </nav>
+
+    <!--Navbar End-->
+    <!--Header Start-->
+
+    <header class="slider">
+        <div class="slider__container">
+            <div class="slider__item">
+                <div class="slider__item-left">
+                    <h3 class="slider__item-text-product" id="slider__item-text-product">PRODUCT</h3>
+                    <h2 class="slider__item-text-two" id="slider__item-text-two">TWO</h2>
+                    <button class="slider__item-button" id="slider__item-button">COMPRAR</button>
+                    <div class="slider__img-container">
+                        <img class="slider__item-img" id="slider__item--img" src="/assets/header-img.png" alt="paint">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="slider__button-left" id="slider__button-left"><i class='bx bxs-chevron-left'></i></button>
+        <button class="slider__button-right" id="slider__button-right"><i class='bx bxs-chevron-right'></i></button>
+    </header>
+
+    <!--End of slider header-->
+    <!--Main content aticles start-->
+
+    <main class="articles">
+        <h2 class="articles__heading">Últimos Artículos</h2>
+
+        <div class="articles__container-up">
+
+            <!--first four cards-->
+            <div class="card">
+                <div class="card__img"></div>
+                <div class="card__content">
+                    <h3 class="card__content-heading">Lorem Ipsum</h3>
+                    <h4 class="card__content-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. sed do
+                        eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim, quis</h4>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card__img"></div>
+                <div class="card__content">
+                    <h3 class="card__content-heading">Lorem Ipsum sit amet, conseteur.</h3>
+                    <h4 class="card__content-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. sed do
+                        eiusmod tempor incididunt.</h4>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card__img"></div>
+                <div class="card__content">
+                    <h3 class="card__content-heading">Lorem Ipsum sit amer, conseteur.</h3>
+                    <h4 class="card__content-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. sed do
+                        eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim, quis</h4>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card__img"></div>
+                <div class="card__content">
+                    <h3 class="card__content-heading">Lorem Ipsum</h3>
+                    <h4 class="card__content-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. sed do
+                        eiusmod tempor incididunt.</h4>
+                </div>
+            </div>
+        </div>
+
+        <!--second four cards-->
+
+        <div class="articles__container-down">
+            <div class="card">
+                <div class="card__img"></div>
+                <div class="card__content">
+                    <h3 class="card__content-heading">Lorem Ipsum</h3>
+                    <h4 class="card__content-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. sed do
+                        eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim, quis</h4>
+                </div>
+            </div>
+
+            <div class="card" id="last-card-one">
+                <div class="card__img"></div>
+                <div class="card__content">
+                    <h3 class="card__content-heading">Lorem Ipsum</h3>
+                    <h4 class="card__content-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. sed do
+                        eiusmod tempor incididunt.</h4>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card__img"></div>
+                <div class="card__content">
+                    <h3 class="card__content-heading">Lorem Ipsum </h3>
+                    <h4 class="card__content-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. sed do
+                        eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim, quis</h4>
+                </div>
+            </div>
+
+            <div class="card" id="last-card-two">
+                <div class="card__img"></div>
+                <div class="card__content">
+                    <h3 class="card__content-heading">Lorem Ipsum</h3>
+                    <h4 class="card__content-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. sed do
+                        eiusmod tempor incididunt.</h4>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--Main content aticles End-->
+    <!--Form section start-->
+
+    <section class="form">
+        <h2 class="form__heading">Formulario</h2>
+        <div class="form__wrapper">
+            <form class="form__container" id="form-container" method="GET" action="#">
+                <div class="form__input-container--one" id="name-container">
+                    <input class="form__input" type="text" data-type="nombre" id="nombre" placeholder="Nombre">
+                    <span class="input__alert" id="nombre-alert"></span>
+                </div>
+                <div class="form__input-container--two">
+                    <input class="form__input" type="text" data-type="apellido" id="apellido" placeholder="Apellido">
+                    <span class="input__alert" id="apellido-alert"></span>
+                </div>
+                <div class="form__input-container--three">
+                    <input class="form__input" type="email" name="email" id="email" placeholder="e-Mail">
+                    <span class="input__alert" id="email-alert"></span>
+                </div>
+                <div class="form__input-container--four">
+                    <select class="form__input" id="departamento">
+                        <option class="departamento__option" selected disabled>Departamento</option>
+                        <h2 class="input__alert" id="departamento-alert"></h2>
+                </div>
+                <div class="form__input-container--six">
+                    <input class="form__input" type="text" id="ci" placeholder="C.I."/>
+                    <span class="input__alert" id="ci-alert"></span>
+                </div>
+                <div class="form__input-container--five">
+                    <select class="form__input" id="localidad">
+                        <option class="localidad__option" selected disabled>Localidad</option>
+                        <h4 class="input__alert" id="localidad-alert"></h4>
+                </div>
+                <div class="form__input-container--seven">
+                    <input class="bases_input" type="checkbox" name="bases" id="bases">
+                    <label class="bases__label" for="bases">Acepto las bases y condiciones</label>
+                    <span class="input__alert" id="bases-alert"></span>
+                </div>
+                <button class="form__container-button" type="submit" name="submit-button"
+                    id="send-button">ENVIAR</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="js/alert-functions.js"></script>
+    <script src="js/logica.js"></script>
+    <script src="js/datos.js"></script>
+</body>
+
+</html>

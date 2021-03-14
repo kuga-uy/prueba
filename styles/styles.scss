@@ -1,0 +1,650 @@
+/*fonts*/
+
+//font-family: 'roboto';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+//font-family: 'IBM Plex Sans';
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&display=swap');
+//font-family: 'Lato';
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+$primary-font:'Lato', sans-serif;
+$secondary-font: 'IBM Plex Sans', sans-serif;
+$tertiary-font: 'Roboto', Arial, sans-serif;
+
+/* color variables*/
+
+$general-color: #000;
+$card-color: #b3b3b3;
+$banner-background-color: #d3d3d3;
+$banner-font-color: #868686;
+$button-primary-color: #00a7e8;
+$button-hover: #26deff;
+$button-secondary-color: #fff;
+$border-default-color: #b8b9b8;
+$account-text-color:  #4d4d4c;
+$card-img-background: #b3b3b3;
+$form-color:#8b8b8b;
+
+$error-font-color: #d42c2c;
+
+
+
+/*mixins*/
+
+@mixin item-center($display, $justify, $align ){
+    display: $display;
+    justify-content: $justify;
+    align-items: $align;
+}
+@mixin box-size ($width, $height){
+    width: $width;
+    height: $height;
+}
+
+@mixin button-style {
+    @include box-size(60px, 60px);
+    border-radius: 50%;
+    background-color: $button-secondary-color;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    position: absolute;
+    margin: 20px;
+}
+
+/*global styles*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.body{
+    overflow-x: hidden;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/*------------------ NAVBAR SECTION------------*/
+
+.navbar{
+    @include box-size(100%,2.5rem);
+    z-index: 10;
+    position: relative;
+    background-color: $general-color;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1.5rem;
+    .navbar__title{
+        color: $banner-font-color;
+        font-family: $primary-font; 
+        font-weight: 300;
+        font-size: 1.2rem;
+    }
+    .navbar__account-container{
+        @include item-center(inline-flex,flex-end,center);
+        position: absolute;
+        width: 50%;
+        left: 48%;
+        .navbar__account-text{
+            color: #4d4d4c;
+            font-family: $primary-font;
+            font-size: .7rem;
+            margin-right: 10px;
+        }
+        .navbar__account-logo{
+            @include box-size(20px, 20px);
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            border-radius: 50%;
+            border: 2px solid $account-text-color;
+            padding: 12px;
+            .navbar__account-logo-content{
+                color: $account-text-color;
+                font-family: $primary-font;
+                font-size: 1.3rem;
+            }
+        }
+    }
+   
+}
+
+/*-------------- BANNER SLIDER HEADER-------*/
+
+.slider{
+    overflow: hidden;
+    position: relative;
+    @include item-center(flex, space-between , center);
+    @include box-size(100%, 300px);
+    .slider__button-left, .slider__button-right{
+        @include button-style;
+    }
+    .slider__button-right{
+        position: absolute;
+        margin: 0;
+        right: 2%;
+        i {
+            font-size: 3rem;
+            color: $button-primary-color;
+        }
+     }
+     .slider__button-left{
+         position: absolute;
+         left:5px;
+         i{
+             font-size: 3rem;
+             color: $button-primary-color;
+         }
+     }
+    .slider__container{
+        overflow: hidden;
+        display: flex;
+        @include box-size(100%, 100%);
+        position: relative;
+        background-color: $banner-background-color;
+        .slider__item{
+            @include box-size(100%, 100%);
+            display: flex;
+            .slider__item-left{
+                @include box-size(60%, 100%);
+                align-items: center;
+                flex-direction: column;
+                margin-left: 120px;
+                .slider__item-text-product{
+                    position: relative;
+                    letter-spacing: -1px;
+                    top: 35px;
+                    font-family: $primary-font;
+                    font-weight: 400;
+                    color: $banner-font-color;
+                    font-size: 1.7rem;
+                }
+                .slider__item-text-two{
+                    position:relative;
+                    top: 5px;
+                    font-family: $secondary-font;
+                    font-size: 7rem;
+                    color: $banner-font-color;
+                }
+                .slider__item-button{
+                    @include box-size(15.5rem, 4rem);
+                    border: none;
+                    outline: none;
+                    border-radius: 10px;
+                    color: $button-secondary-color;
+                    letter-spacing: .3rem;
+                    font-size: 1rem;
+                    background-color: $button-primary-color;
+                    font-weight: bold;
+                    z-index: 10;
+                    &:hover{
+                        background-color: $button-hover;
+                    }
+                }
+                .slider__img-container{
+                    @include box-size(500px,500px);
+                    position:absolute;
+                    top: -40%;
+                    margin-left: 180px;
+                }
+            }
+            
+        }
+    }
+    
+}
+
+/*-------------------- MAIN SECTION ARTICLES -------------*/
+
+
+.articles{
+    font-family: Arial, Helvetica, sans-serif;
+    @include item-center(flex,space-around, center);
+    position: static;
+    flex-direction: column;
+    height: 700px;
+    .articles__heading {
+        font-family: $tertiary-font;
+        font-size: 1.8rem;
+        position: relative;
+        right: 320px;
+        top: 30px;
+        font-weight: lighter;
+    }
+    .articles__container-up{
+        position: relative;
+        top: 40px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        @include box-size(100%, 300px );
+        flex-wrap: wrap;
+        .card{
+            @include box-size(200px, 300px);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid $border-default-color;
+            border-radius: 5px;
+            margin-left: 15px;
+            margin-right: 15px;
+            box-shadow: 0px 0px 1px 0px;
+            &:nth-child(odd){
+                margin: 0;
+            }
+            &:nth-child(even){
+                margin-top: 30px;
+            }
+            .card__img{
+            display: flex;
+            @include box-size(100%,50% );
+            background-color: $card-img-background;
+            }
+            .card__content{
+                padding: 15px;
+            }
+            .card__content .card__content-heading{
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+            .card__content .card__content-paragraph{
+                font-size: .7rem;
+                font-weight: lighter;
+            }
+        }
+    }
+}
+
+
+
+.articles__container-down{
+    position: relative;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    @include box-size(100%, 300px );
+    flex-wrap: wrap;
+    .card{
+        @include box-size(200px, 300px);
+        display: flex;
+        flex-direction: column;
+        border: 1px solid $border-default-color;
+        border-radius: 5px;
+        margin-left: 15px;
+        margin-right: 15px;
+        &:nth-child(odd){
+            margin: 0;
+        }
+        &:nth-child(even){
+            margin-top: 30px;
+        }
+        .card__img{
+        display: flex;
+        @include box-size(100%,50% );
+        background-color: $card-img-background;
+        }
+        .card__content{
+            padding: 15px;
+        }
+        .card__content .card__content-heading{
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        .card__content .card__content-paragraph{
+            font-size: .7rem;
+            font-weight: lighter;
+        }
+    }
+}
+
+/*-------------FORM SECTION--------------*/
+
+.form{
+    position: relative;
+    @include item-center(flex, center ,center );
+    flex-direction: column;
+    top: 120px;
+    .form__heading{
+        margin-bottom: 5px;
+        font-family: $tertiary-font;
+        font-weight: lighter;
+    }
+    .form__wrapper{
+        width: 100%;
+        border-top: 1px solid $form-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .form__container{
+            @include box-size(75%, 250px );
+            position: relative;
+            top: 30px;
+            display: grid;
+            grid-gap: 15px;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            
+            .form__input-container--one{
+                grid-column: 1 / 2;
+                width: 100%;
+            }
+            .form__input-container--two{
+                grid-column: 2 / 3;
+                width:100%
+            }
+            .form__input-container--three{
+               grid-column: 1 / 3;
+               width:100%
+            }
+            .form__input-container--four{
+                grid-column: 1 / 2;
+                width:100%
+            }
+            .form__input-container--five{
+                grid-column: 2 / 3;
+                width:100%
+            }
+            .form__input-container--six{
+                grid-column: 1 / 2;
+                width:100%
+            }
+            .form__input-container--seven{
+                grid-column: 2 / 3;
+                width:100%
+            }
+        
+            .form__container-button{
+                position: relative;
+                @include box-size(7rem, 1.8rem);
+                left: 95%;
+                border: none;
+                outline: none;
+                border-radius: 3px;
+                color: $button-secondary-color;
+                letter-spacing: .15rem;
+                font-size: .7rem;
+                background-color: $button-primary-color;
+                font-weight: bold;
+                &:hover{
+                    background-color: $button-hover;
+                }
+            }
+        }
+    }
+
+}
+
+.form__input{
+    @include box-size(100%, 35px);
+    margin-top: 5px;
+    font-family: $tertiary-font;
+    color: $form-color;
+    background-color: $button-secondary-color;
+    padding-left: 10px;
+    border: 1px solid $form-color;
+    border-radius: 3px;
+    outline: none;
+}
+.bases__input{
+    position: absolute;
+}
+.bases__label{
+    position: relative;
+    font-family: $tertiary-font;
+    font-size: 1rem;
+    color: $form-color;
+}
+
+.departamento__option, .localidad__option{
+    color: $form-color;
+    font-family: $tertiary-font;
+    font-size: .8rem;
+}
+
+
+                            /*validation error alert*/
+
+.error.input__alert{
+    position: relative;
+    top: 5px;
+    font-family: $secondary-font;
+    color: $error-font-color;
+    font-size: .9rem;
+}
+
+.error.form__input{
+    border: 2px solid $error-font-color;
+}
+
+/*------------------Todo validado-------*/
+
+.validated.form__input{
+    border: 2px solid #00aa00;
+}
+
+/*-------------------------RESPONSIVE-----------------------*/
+
+@media (max-width: 859px){
+
+    /*------header slider------*/
+
+    .slider__item-img{
+        @include box-size(450px, 450px);
+        position: relative;
+        top: 40px;
+    }
+
+    /*---------articles setion------*/
+  
+    .articles__heading {
+        margin-left: 220px;
+    }
+
+    .articles__container-up .card:nth-child(even){  
+        position: relative;
+        top: 100px;    
+    }
+    .articles__container-down{
+        top: 400px;
+    }
+
+    .articles__container-down .card:nth-child(odd){
+        position:relative;
+        top: -350px;
+    }
+
+    #last-card-one{
+        position:relative;
+        right: 220px;
+        bottom: 50px;
+    }
+
+    #last-card-two{
+        position: relative;
+        left: 220px;
+        bottom: 380px;
+    }
+   
+    /*---------form section-----------*/
+    .form{
+        top: 450px;
+    }
+
+}
+
+
+@media(max-width: 629px){
+
+     /*------header slider------*/
+
+     .slider__item-left{
+         position: relative;
+         right: 80px;
+        display: inline-block;
+        @include box-size(60%, 100%);
+        align-items: center;
+        flex-direction: column;
+        margin-left: 0px;
+     }
+    .slider__item-img{
+        @include box-size(400px, 400px);
+        position: relative;
+        top: 60px;
+        right: 150px;
+    }
+    #slider__item-text-product{
+        margin-top: -10px;
+        margin-bottom: 15px;
+        font-size: 1rem;
+    }
+    #slider__item-text-two{
+        top: 5px;
+        font-size: 4rem;
+        margin-bottom: 80px;
+        z-index: 40;
+    }
+    #slider__item-button{
+        position: relative;
+        @include box-size(12rem, 3rem);
+        z-index: 40;
+    }
+
+    /*---------articles section------*/
+  
+    .articles__heading{
+        position: relative;
+        text-align: center;
+        left: calc(50% - 70%);
+        width: 100%;
+    }
+
+    .articles__container-up .card:nth-child(even){  
+        position: relative;
+        top: -30px;    
+    }
+    .articles__container-down{
+        top: 725px;
+    }
+
+    .articles__container-down .card:nth-child(odd){
+        position:relative;
+        top: -350px;
+    }
+
+    #last-card-one{
+        position:relative;
+        right: 0px;
+        bottom: 380px;
+    }
+
+    #last-card-two{
+        position: relative;
+        left: 0px;
+        bottom: 380px;
+    }
+
+    /*---------form section-----------*/
+    .form{
+        top: 750px;
+    }
+    /*--------validation error alert--------------*/
+
+.error.input__alert{
+    position: relative;
+    top: 3px;
+    font-family: $secondary-font;
+    color: $error-font-color;
+    font-size: .7rem;
+    }
+
+}
+
+
+
+/*-----------heading----------*/
+@media (max-width: 429px){
+    #slider__button-left, 
+    #slider__button-right,
+    .navbar__account-text{
+        display: none;
+
+    #slider__item-img{
+        @include box-size(200px, 200px);
+        position: relative;
+        top: -60px;
+        right: 280px;
+    }
+}
+/*--------articles-------------*/
+    .articles__heading{
+        left: calc(50% - 100%);
+    }
+
+
+    .articles__container-up .card:nth-child(even){  
+        position: relative;
+        top: -15px;    
+    }
+    .articles__container-down{
+        top: 1130px;
+    }
+
+    .articles__container-down .card:nth-child(odd){
+        position:relative;
+        top: 170px;
+    }
+
+    #last-card-one{
+        position:relative;
+        right: 0px;
+        bottom: 480px;
+    }
+
+    #last-card-two{
+        position: relative;
+        left: 0px;
+        bottom: 480px;
+    }
+
+    /*-------form-----------*/
+
+    .form{
+        top: 1950px;
+    }
+
+    .form__wrapper{
+        height: 500px;
+    }
+
+    .bases__label{
+        font-size: .7rem;
+    }
+
+    #form-container{
+        top: -40px;
+        @include item-center(flex, center, center);
+        flex-direction: column;
+        width:90%;
+        height: 100%;
+    }
+
+    #send-button{
+        position: relative;
+        left: calc(50% - 50%);
+        @include box-size(10rem, 2.5rem);
+        font-size: 1rem;
+
+    }
+
+}
+
